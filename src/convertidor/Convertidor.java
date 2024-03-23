@@ -6,9 +6,6 @@
 package convertidor;
 
 import controllers.ConvertidorController;
-import java.math.BigDecimal;
-import java.math.MathContext;
-import java.math.RoundingMode;
 
 /**
  *
@@ -22,7 +19,6 @@ public class Convertidor {
     public static void main(String[] args) {
         
         ConvertidorController cc = new ConvertidorController();
-        System.out.println(cc.euroToDollar(189));
     }
     
 }
