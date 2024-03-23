@@ -15,8 +15,8 @@ import java.math.RoundingMode;
  */
 public class ConvertidorController {
     
-    public final static BigDecimal EUR_TO_DOLLAR = new BigDecimal(1.08223);
-    public final static BigDecimal DOLLAR_TO_EUR = new BigDecimal(0.92388);
+    public final BigDecimal EUR_TO_DOLLAR = new BigDecimal(1.08223);
+    public final BigDecimal DOLLAR_TO_EUR = new BigDecimal(0.92388);
 
     public ConvertidorController() {
     
@@ -35,6 +35,7 @@ public class ConvertidorController {
         return dollarsDecimal
                 .multiply(DOLLAR_TO_EUR)
                 .round(new MathContext(5, RoundingMode.HALF_EVEN));
+    
     }
     
     
@@ -47,7 +48,8 @@ public class ConvertidorController {
         
         BigDecimal eurosDecimal = new BigDecimal(euros);
         return eurosDecimal.
-                multiply(EUR_TO_DOLLAR).round(new MathContext(5, RoundingMode.HALF_EVEN));
+                multiply(EUR_TO_DOLLAR)
+                .round(new MathContext(5, RoundingMode.HALF_EVEN));
         
     }
     
