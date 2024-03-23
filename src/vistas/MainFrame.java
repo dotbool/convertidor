@@ -5,6 +5,9 @@
  */
 package vistas;
 
+import com.formdev.flatlaf.IntelliJTheme;
+import javax.swing.SwingUtilities;
+
 /**
  *
  * @author Javier Martínez Ruiz. DAM
@@ -16,6 +19,15 @@ public class MainFrame extends javax.swing.JFrame {
      */
     public MainFrame() {
         initComponents();
+        setLocationRelativeTo(null);
+        setLaf();
+        setVisible(true);
+    }
+    
+    private void setLaf(){
+           IntelliJTheme.setup(MainFrame.class.getResourceAsStream(
+               "/com/formdev/flatlaf/intellijthemes/themes/Cyan.theme.json"));
+        SwingUtilities.updateComponentTreeUI(MainFrame.this);
     }
 
     /**
@@ -27,57 +39,112 @@ public class MainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        groupDivisas = new javax.swing.ButtonGroup();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        labelCantidad = new javax.swing.JLabel();
+        rbtnEuro = new javax.swing.JRadioButton();
+        rbtnDolar = new javax.swing.JRadioButton();
+        jPanel2 = new javax.swing.JPanel();
+        jSlider1 = new javax.swing.JSlider();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        labelCambio = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.PAGE_AXIS));
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 15, 5, 15));
+        jPanel1.setMaximumSize(new java.awt.Dimension(3232322, 3223233));
+        jPanel1.setMinimumSize(new java.awt.Dimension(400, 100));
+        jPanel1.setLayout(new javax.swing.BoxLayout(jPanel1, javax.swing.BoxLayout.LINE_AXIS));
+
+        jLabel2.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        jLabel2.setText("Cantidad: ");
+        jLabel2.setToolTipText("Importe que desea cambiar");
+        jLabel2.setMaximumSize(new java.awt.Dimension(90, 40));
+        jLabel2.setMinimumSize(new java.awt.Dimension(90, 20));
+        jLabel2.setPreferredSize(new java.awt.Dimension(90, 40));
+        jPanel1.add(jLabel2);
+
+        labelCantidad.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        labelCantidad.setText("0");
+        labelCantidad.setMaximumSize(new java.awt.Dimension(90, 40));
+        labelCantidad.setMinimumSize(new java.awt.Dimension(90, 20));
+        labelCantidad.setPreferredSize(new java.awt.Dimension(90, 40));
+        jPanel1.add(labelCantidad);
+
+        groupDivisas.add(rbtnEuro);
+        rbtnEuro.setText("Euro");
+        rbtnEuro.setMaximumSize(new java.awt.Dimension(90, 40));
+        rbtnEuro.setMinimumSize(new java.awt.Dimension(90, 20));
+        rbtnEuro.setPreferredSize(new java.awt.Dimension(90, 40));
+        jPanel1.add(rbtnEuro);
+
+        groupDivisas.add(rbtnDolar);
+        rbtnDolar.setText("Dólar");
+        rbtnDolar.setMaximumSize(new java.awt.Dimension(90, 40));
+        rbtnDolar.setMinimumSize(new java.awt.Dimension(90, 20));
+        rbtnDolar.setPreferredSize(new java.awt.Dimension(90, 40));
+        jPanel1.add(rbtnDolar);
+
+        getContentPane().add(jPanel1);
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 15, 5, 15));
+        jPanel2.setMaximumSize(new java.awt.Dimension(3232322, 3223233));
+        jPanel2.setMinimumSize(new java.awt.Dimension(400, 100));
+        jPanel2.setPreferredSize(new java.awt.Dimension(400, 100));
+        jPanel2.setLayout(new java.awt.GridLayout());
+
+        jSlider1.setMajorTickSpacing(20);
+        jSlider1.setMaximum(300);
+        jSlider1.setMinorTickSpacing(10);
+        jSlider1.setPaintLabels(true);
+        jSlider1.setPaintTicks(true);
+        jSlider1.setSnapToTicks(true);
+        jPanel2.add(jSlider1);
+
+        getContentPane().add(jPanel2);
+
+        jPanel3.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 15, 5, 15));
+        jPanel3.setMaximumSize(new java.awt.Dimension(3232322, 3223233));
+        jPanel3.setMinimumSize(new java.awt.Dimension(400, 100));
+        jPanel3.setPreferredSize(new java.awt.Dimension(400, 100));
+        jPanel3.setLayout(new javax.swing.BoxLayout(jPanel3, javax.swing.BoxLayout.LINE_AXIS));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3.setText("Cambio: ");
+        jLabel3.setToolTipText("Importe que recibe en la divisa seleccionada");
+        jLabel3.setMaximumSize(new java.awt.Dimension(90, 40));
+        jLabel3.setMinimumSize(new java.awt.Dimension(90, 40));
+        jLabel3.setPreferredSize(new java.awt.Dimension(90, 40));
+        jPanel3.add(jLabel3);
+
+        labelCambio.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        labelCambio.setText("0");
+        labelCambio.setMaximumSize(new java.awt.Dimension(90, 40));
+        labelCambio.setMinimumSize(new java.awt.Dimension(90, 40));
+        labelCambio.setPreferredSize(new java.awt.Dimension(90, 40));
+        jPanel3.add(labelCambio);
+
+        getContentPane().add(jPanel3);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MainFrame().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup groupDivisas;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JSlider jSlider1;
+    private javax.swing.JLabel labelCambio;
+    private javax.swing.JLabel labelCantidad;
+    private javax.swing.JRadioButton rbtnDolar;
+    private javax.swing.JRadioButton rbtnEuro;
     // End of variables declaration//GEN-END:variables
 }
